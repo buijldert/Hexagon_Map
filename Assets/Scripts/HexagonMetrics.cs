@@ -10,14 +10,14 @@ public class HexagonMetrics : MonoBehaviour {
     //the number of degrees in a full circle
 	private float _maxDegrees = 360; //Degrees of a full circle
     //gets the size of the hexagongrid
-    private float _hexSize = HexagonGrid.Size;
+    private float _hexagonSize = HexagonGrid.Size;
     //store the corners in a list
 	public List<Vector3> Corners;
 
     //calculate the hexagoncell height
 	public float CellHeight 
     {
-		get { return _hexSize * 2;}
+		get { return _hexagonSize * 2;}
 	}
 
     //calculate the hexagoncell width
@@ -30,8 +30,8 @@ public class HexagonMetrics : MonoBehaviour {
 	public void CreateHexagon (Vector3 center) {
 		Corners.Add (center);
 		for (int i = 0; i < _maxDegrees / _cornerDegrees; i++) {
-			float x = center.x + _hexSize * Mathf.Sin ((_cornerDegrees * i) * Mathf.Deg2Rad);
-			float z = center.z + _hexSize * Mathf.Cos ((_cornerDegrees * i) * Mathf.Deg2Rad);
+			float x = center.x + _hexagonSize * Mathf.Sin ((_cornerDegrees * i) * Mathf.Deg2Rad);
+			float z = center.z + _hexagonSize * Mathf.Cos ((_cornerDegrees * i) * Mathf.Deg2Rad);
 			Vector3 newCorner = new Vector3 (x, 0, z);
 			Corners.Add (newCorner);
 		}

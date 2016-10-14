@@ -14,13 +14,13 @@ public class HexagonMesh : MonoBehaviour {
     //a variable to store the hexagon mesh in
     private Mesh _hexagonMesh;
 
-    //fill variables and start Triangulate(), also set position and clear the hexagonmesh
+    //fill variables and start Triangulate(), also set position and clear/fill the hexagonmesh
 	private void Start() 
     {
-		_hexagonMesh = GetComponent<MeshFilter> ().mesh;
+		_hexagonMesh = GetComponent<MeshFilter>().mesh;
         _hexagonMetrics = GetComponent<HexagonMetrics> ();
 		_vertices   = _hexagonMetrics.Corners;
-        _hexagonMesh.name = "Hex Mesh";
+        _hexagonMesh.name = "Hexagon Mesh";
 
 		Triangulate ();
 

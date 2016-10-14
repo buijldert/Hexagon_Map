@@ -35,6 +35,7 @@ public class HexagonGrid : MonoBehaviour
     void Awake()
     {
         _hexagonCoordinatesCanvas = GetComponentInChildren<Canvas>();
+        ChangeHexSize();
         SpawnGrid();
     }
 
